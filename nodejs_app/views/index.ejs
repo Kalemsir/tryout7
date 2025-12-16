@@ -1,0 +1,60 @@
+
+<%- include('./includes/head.ejs'); -%>
+
+        <!-- SOL MENÜ BAŞLIYOR-->
+<%- include('./includes/navigation.ejs'); -%>
+
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 class="h2"><%=pageTitle %></h1>
+   
+  </div>
+
+  <table class="table">
+    <tr>
+      <th>Ürün Adı</th>
+      <th>Fiyat</th>
+      <th>Açıklama</th>
+      <th>İşlem</th>
+    </tr>
+
+      <% if(urunler.length >0) { %>
+      
+         <% for(let urun of urunler) {%>
+           <tr>
+                <td> <%=urun.urun_adi %> </td>
+                <td> <%=urun.fiyat %> </td>
+                <td> <%=urun.aciklama %> </td>
+                <td> 
+                
+                  <form action="admin/sil" method="post">
+                    <a href="/<%=urun._id %>">Detay Gör</a> |<input type="hidden" name="urun_id" value="<%=urun._id %>">
+                    <button class="btn" type="submit">Sil</button>
+                  </form>
+                  
+                 
+            </tr>
+            <% } %>   
+      
+           
+      
+    <% }else { %>
+    
+      <tr>
+        <th colspan="4" style="text-align:center; background-color:red;">Veritabanı Boş!!</th>
+      </tr>
+
+     <% } %>
+
+
+
+  </table>
+  
+
+</main>
+
+
+<%- include('./includes/end.ejs'); -%>

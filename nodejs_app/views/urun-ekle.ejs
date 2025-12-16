@@ -1,0 +1,43 @@
+
+<%- include('./includes/head.ejs'); -%>
+
+        <!-- SOL MENÜ BAŞLIYOR-->
+<%- include('./includes/navigation.ejs'); -%>
+
+
+<main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+  <div
+    class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+  >
+    <h1 class="h2"><%=pageTitle %></h1>
+
+
+  </div>
+   
+   <form action="urun-ekle" method="POST">
+  <div class="mb-3">
+    <label for="urun_adi" class="form-label">Ürün Adı</label>
+    <input name="urun_adi" type="text" class="form-control" id="urun_adi" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text"></div>
+  </div>
+   <div class="mb-3">
+    <label for="fiyat" class="form-label">Fiyat </label>
+    <input name="fiyat" type="text" class="form-control" id="fiyat" aria-describedby="fiyatYardim">
+    <div id="fiyatYardim" class="form-text"></div>
+  </div>
+
+    <div class="mb-3">
+    <label for="aciklama" class="form-label">Açıklama </label>
+    <input name="aciklama" type="text" class="form-control" id="aciklama" aria-describedby="aciklamaYardim">
+    <div id="aciklamaYardim" class="form-text"></div>
+  </div>
+
+  
+  <button type="submit" class="btn btn-primary">Ürün Ekle</button>
+</form>
+ 
+
+</main>
+
+
+<%- include('./includes/end.ejs'); -%>
